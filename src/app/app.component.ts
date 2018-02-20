@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  position: number[];
+  
+  onTitleClicked($event) {
+    this.title = $event;
+    console.log(this.title);
+  } 
+  onMousePosition($event) {
+    this.position=$event;
+  } 
+
 }
