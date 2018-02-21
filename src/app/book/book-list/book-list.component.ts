@@ -3,6 +3,7 @@ import { Book } from "../shared/book";
 import { BookDataService } from "../shared/book-data.service";
 import { map } from "rxjs/operators";
 import { Observable } from "rxjs/Observable";
+import { Subscription } from "rxjs/Subscription";
 
 
 @Component({

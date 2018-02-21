@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import {HttpClient, HttpParams} from "@angular/common/http";
 import { Book } from "./book";
-import {Observable} from "rxjs/Observable";
+import {Observable} from "rxjs";
 
 @Injectable()
 export class BookDataService {
@@ -57,13 +57,13 @@ export class BookDataService {
 
   getBooks(): Observable<Book[]> {
 
-    return this.http.get<Book[]>("http://localhost:4730/books")
+    return this.http.get<Book[]>("http://localhost:4730/books");
   }
 
   getBookByIsbn(isbn: string) {
 
     
-    return this.http.get<Book>("http://localhost:4730/books/"+isbn  );
+    return this.http.get<Book>("http://localhost:4730/books/" + isbn  );
   } 
 
   getBooksStatic(): Observable<Book[]> {

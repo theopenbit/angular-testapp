@@ -6,10 +6,10 @@ import { AppComponent } from "./app.component";
 import { InfoBoxComponent } from "./info-box/info-box.component";
 import { MouseCursorComponent } from "./mouse-cursor/mouse-cursor.component";
 import { TitleBoxComponent } from "./title-box/title-box.component";
-import { BookListComponent } from "./book-list/book-list.component";
 import { AppRoutingModule } from "./app-routing.module";
-import { BookDataService } from "./shared/book-data.service";
-import { BookDetailComponent } from './book-detail/book-detail.component';
+import { BookModule } from "./book/book.module";
+import { NotfoundComponent } from './notfound/notfound.component';
+
 
 
 @NgModule({
@@ -18,15 +18,15 @@ import { BookDetailComponent } from './book-detail/book-detail.component';
     InfoBoxComponent,
     MouseCursorComponent,
     TitleBoxComponent,
-    BookListComponent,
-    BookDetailComponent
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BookModule
   ],
-  providers: [BookDataService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
