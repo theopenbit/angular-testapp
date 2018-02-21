@@ -2,8 +2,36 @@
   book-list works!
 </p>
 
-<div class="row"
-*ngFor="let book of books">
-<div class="col-xs-12"><a> {{book.title}} </a></div>
+<ul class="list-group"
+*ngFor="let book of getBooks()">
+<li class="list-group-item"><a  [routerLink]="['/books', book.isbn]">{{book.title}}</a>  </li>
 
+
+</ul>
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Bücher
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+      
+      <a  *ngFor="let title of getBooktitles()" class="dropdown-item" href="#">{{title}}</a>
+     
+
+
+    </div>
+</div>
+
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Bücher
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
+      
+      <a class="dropdown-item" href="#">2</a>
+      <a class="dropdown-item" href="#">1</a>
+
+
+    </div>
 </div>

@@ -1,12 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import {HttpClientModule} from "@angular/common/http";
 
-
-import { AppComponent } from './app.component';
-import { InfoBoxComponent } from './info-box/info-box.component';
-import { MouseCursorComponent } from './mouse-cursor/mouse-cursor.component';
-import { TitleBoxComponent } from './title-box/title-box.component';
-import { BookListComponent } from './book-list/book-list.component';
+import { AppComponent } from "./app.component";
+import { InfoBoxComponent } from "./info-box/info-box.component";
+import { MouseCursorComponent } from "./mouse-cursor/mouse-cursor.component";
+import { TitleBoxComponent } from "./title-box/title-box.component";
+import { BookListComponent } from "./book-list/book-list.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { BookDataService } from "./shared/book-data.service";
+import { BookDetailComponent } from './book-detail/book-detail.component';
 
 
 @NgModule({
@@ -15,12 +18,15 @@ import { BookListComponent } from './book-list/book-list.component';
     InfoBoxComponent,
     MouseCursorComponent,
     TitleBoxComponent,
-    BookListComponent
+    BookListComponent,
+    BookDetailComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [BookDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
