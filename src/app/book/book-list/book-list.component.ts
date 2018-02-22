@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from "@angular/core";
 import { Book } from "../shared/book";
 import { BookDataService } from "../shared/book-data.service";
 import { map } from "rxjs/operators";
@@ -10,22 +10,23 @@ import { Subscription } from "rxjs/Subscription";
   // tslint:disable-next-line:component-selector
   selector: "book-list",
   templateUrl: "./book-list.component.html",
-  styleUrls: ["./book-list.component.css"]
+  styleUrls: ["./book-list.component.css"],
+  encapsulation: ViewEncapsulation.Emulated // |  None 
 })
 export class BookListComponent implements OnInit, OnDestroy {
 
-  
+
   booksSub: Subscription;
   books: Book[];
   titles: String[] ;
   constructor(private bookData: BookDataService) {
-    
+
   }
 
   getBooktitles() {
     return this.titles ;
   }
-  
+
   getBooks() {
     return this.books ;
   }

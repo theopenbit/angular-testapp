@@ -71,4 +71,10 @@ export class BookDataService {
     return Observable.of(this.books);
   }
 
+  save(isbn: String, book: Book) {
+    return this.http.put("http://localhost:4730/books/" + isbn, book);
+  } 
+  newBook( book: Book) {
+    return this.http.post("http://localhost:4730/books/", book);
+  } 
 }

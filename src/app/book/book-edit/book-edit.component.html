@@ -1,0 +1,65 @@
+<p>
+  Edit a book now!
+</p>
+<div *ngIf="book">
+<form #form="ngForm" (ngSubmit)="save()">
+    <fieldset ngModelGroup="book">
+        <label for="ip_isbn">isbn</label>
+        <input
+        class="form-control"
+          id="ip_isbn"
+          type="text"
+          [(ngModel)]="book.isbn" 
+          name="isbn" 
+          required     
+          #isbn="ngModel">
+          <div [hidden]="!isbn.errors?.required || isbn.pristine">
+            enter isbn !!!
+          </div>
+
+
+          <label for="ip_title">Title</label>
+          <input
+          class="form-control"
+            id="ip_title"
+            type="text"
+            [(ngModel)]="book.title" 
+            name="title" 
+            required     
+            #title="ngModel">
+            <div [hidden]="!title.errors?.required || title.pristine">
+              enter title !!!
+            </div>
+      
+        <label for="ip_author">Author</label>
+      <input
+      class="form-control"
+        id="ip_author"
+        type="text"
+        [(ngModel)]="book.author" 
+        name="author" 
+        required     
+        #author="ngModel">
+        <div [hidden]="!author.errors?.required || author.pristine">
+          enter author !!!
+        </div>
+
+
+        <label for="ip_abstract">Abstract</label>
+      <input
+      class="form-control"
+        id="ip_abstract"
+        type="text"
+        [(ngModel)]="book.abstract" 
+        name="abstract" 
+        required     
+        #abstract="ngModel">
+        <div [hidden]="!abstract.errors?.required || abstract.pristine">
+          enter abstract !!!
+        </div>
+
+        
+    </fieldset>
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Späeischern</button>  
+  </form>
+</div>

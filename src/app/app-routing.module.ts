@@ -12,19 +12,20 @@ export const routes: Routes = [
       {
         path: "i",
         component: InfoBoxComponent
-      },{
+      }/*, {
         path: "",
         pathMatch: "full",
         redirectTo: "/books"
-      }
-      /*,      
+      }*/,
+      {path: "books", loadChildren: "./book/book.module#BookModule"}
+      /*,
       {
         path: "**",
-        pathMatch: "full",        
+        pathMatch: "full",
         component: NotfoundComponent
 
       }*/
-    
+
 ];
 
 @NgModule({

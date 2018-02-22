@@ -4,6 +4,7 @@
   
 </p>
 <div *ngIf="book">
+  <a class="btn btn-primary" [routerLink]="['edit']">Edit</a>
   <div class="jumbotron">
       <h1 class="display-4">{{ book.title }} </h1>
       <p class="lead">{{ book.subtitle }} </p>

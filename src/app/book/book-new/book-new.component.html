@@ -1,0 +1,13 @@
+<p>
+  book-new works!
+</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <label for="title">title</label>
+    <input class="form-control" type="text" formControlName="title">
+    <label for="title">author</label>
+    <input class="form-control" type="text" formControlName="author">
+    <label for="title">isbn</label>
+    <input class="form-control" type="text" formControlName="isbn">
+    <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Späeischern</button>  
+</form>
